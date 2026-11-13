@@ -1,5 +1,7 @@
 // SkillSupport API Client
-const BASE_URL = '/api';
+const BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL || '/api'
+).replace(/\/$/, '');
 
 function getHeaders() {
   const token = localStorage.getItem('skillsupport_token');
